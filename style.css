@@ -1,0 +1,36 @@
+body{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.title{
+    font-family: 'Reem Kufi', sans-serif;
+	font-size: 3.65em;
+	font-weight: 600;
+}
+/* 
+header{
+
+    height: 0px;
+} */
+
+.card{
+    margin: auto;
+    background: red;
+    height: 420px;
+    width: 360px;
+}
+
+button{
+    height: 30px;
+}
+
+/* .like-button{
+    padding-left: 270px;
+} */
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+} 
