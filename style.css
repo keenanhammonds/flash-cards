@@ -16,9 +16,14 @@ header{
 
 .card{
     margin: auto;
-    background: red;
+    border: solid black 2px;
     height: 420px;
     width: 360px;
+    text-align: center;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
 }
 
 button{

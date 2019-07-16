@@ -26,6 +26,7 @@ console.log('up and running!!')
 const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
+const start = document.querySelector('.start');
 
 let arrOfData  = [
 
@@ -45,4 +46,51 @@ let letKeyword = new Data('let','Before ES2015 JavaScript did not have Block Sco
 // console.log(scope);
 
 arrOfData.push(scope, hoisting, letKeyword)
-console.log(arrOfData);
+
+let i = 0;
+
+start.addEventListener('click', function evtFunc(evt){
+    evt.preventDefault();
+    addTopic();
+    start.removeEventListener('click', evtFunc);
+})
+
+let h1 = document.createElement('h1');
+let p = document.createElement('p');
+let link = document.createElement('a');
+
+const addTopic = () => {
+    card.appendChild(h1);
+    h1.textContent = arrOfData[i].topic;
+    h1.setAttribute('class', 'topic');
+}
+
+flipButton.addEventListener("click", function flip(evt){
+    evt.preventDefault();
+    addInfo();
+    addLink();
+})
+
+const addInfo = () => {
+    card.appendChild(p);
+    p.textContent = arrOfData[i].info;
+}
+
+const addLink = () => {
+    card.appendChild(link);
+    link.setAttribute('href', arrOfData[i].link);
+    link.setAttribute('target', '_blank');
+    link.textContent = `Learn more about ${arrOfData[i].topic}`;
+}
+
+nextButton.addEventListener('click', function next (evt){
+    evt.preventDefault();
+    card.innerHTML = ''
+    nextCard();
+})
+
+const nextCard = () => {
+    i++;
+    addTopic();
+    console.log(i);
+}
