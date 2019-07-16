@@ -18,8 +18,31 @@ console.log('up and running!!')
 // a links portion at the bottom
 // next card will go to the next topic
 
+
+// in the future we can sort through differnet data sets to study from
+// ie sorting methods array methods string methods
 // 
 
 const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
+
+let arrOfData  = [
+
+]
+
+class Data{
+    constructor(topic,info,link){
+        this.topic = topic;
+        this.info = info;
+        this.link = link;
+    }
+}
+
+let scope = new Data('Scope','JavaScript has function scope: Each function creates a new scope. Scope determines the accessibility (visibility) of these variables. Variables defined inside a function are not accessible (visible) from outside the function.', 'https://www.w3schools.com/js/js_scope.asp')
+let hoisting = new Data('hoisting', 'In JavaScript, a variable can be declared after it has been used. In other words; a variable can be used before it has been declared.', 'https://www.w3schools.com/js/js_hoisting.asp')
+let letKeyword = new Data('let','Before ES2015 JavaScript did not have Block Scope. Variables declared with the let keyword can have Block Scope. Variables declared inside a block {} can not be accessed from outside the block')
+// console.log(scope);
+
+arrOfData.push(scope, hoisting, letKeyword)
+console.log(arrOfData);
