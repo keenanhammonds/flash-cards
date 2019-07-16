@@ -67,8 +67,12 @@ const addTopic = () => {
 
 flipButton.addEventListener("click", function flip(evt){
     evt.preventDefault();
-    addInfo();
-    addLink();
+    if(card.hasChildNodes() === false){
+        console.log('there is nothing to flip')
+    } else {
+        addInfo();
+        addLink();
+    }
 })
 
 const addInfo = () => {
@@ -94,3 +98,8 @@ const nextCard = () => {
     addTopic();
     console.log(i);
 }
+
+// card.addEventListener('click', function clickedCard(evt){
+//     evt.preventDefault();
+//     console.log('clicked');
+// })
