@@ -27,6 +27,11 @@ const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
 const start = document.querySelector('.start');
+const lastButton = document.querySelector('.last-button');
+
+let h1 = document.createElement('h1');
+let p = document.createElement('p');
+let link = document.createElement('a');
 
 let arrOfData  = [
 
@@ -52,7 +57,8 @@ The keyword const is a little misleading. It does NOT define a constant value. I
 Because of this, we cannot change constant primitive values, but we can change the properties of constant objects.`, `https://www.w3schools.com/js/js_const.asp`)
 let classKeyword = new Data('Class', `Use the keyword class to create a class, and always add a constructor method. 
 The constructor method is called each time the class object is initialized.`, `https://www.w3schools.com/js/js_classes.asp`) 
-arrOfData.push(scope, hoisting, letKeyword, useStrict,thisKeyword)
+
+arrOfData.push(scope, hoisting, letKeyword, useStrict,thisKeyword, constKeyword, classKeyword); 
 
 let i = 0;
 
@@ -62,9 +68,7 @@ start.addEventListener('click', function evtFunc(evt){
     start.removeEventListener('click', evtFunc);
 })
 
-let h1 = document.createElement('h1');
-let p = document.createElement('p');
-let link = document.createElement('a');
+
 
 const addTopic = () => {
     card.appendChild(h1);
@@ -94,17 +98,37 @@ const addLink = () => {
     link.textContent = `Learn more about ${arrOfData[i].topic}`;
 }
 
+const nextCard = () => {
+    i++;
+    addTopic();
+    console.log(i);
+}
+
 nextButton.addEventListener('click', function next (evt){
     evt.preventDefault();
     card.innerHTML = ''
     nextCard();
 })
 
-const nextCard = () => {
-    i++;
+const lastCard = () => {
+    i--;
+    card.innerHtml = ''
     addTopic();
     console.log(i);
 }
+
+lastButton.addEventListener('click', function(evt){
+    evt.preventDefault();
+    lastCard();
+} )
+
+// MAKE A START OVER BUTTON ONLY APPEAR WHEN YOU REACH THE END OF THE 
+// CARDS??
+
+// MAKE LETS GET STARTED DISAPEAR WHEN THE GAME IS STARTED???
+
+// MKAE NEXT CARD AND LAST CARD ONLY APPEAR WHEN START BUTTON HAS BEEN 
+// CLICKED 
 
 // card.addEventListener('click', function clickedCard(evt){
 //     evt.preventDefault();
