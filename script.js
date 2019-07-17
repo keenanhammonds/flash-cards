@@ -71,6 +71,7 @@ const addTopic = () => {
 }
 
 const addButtonsToCard = () => {
+      
     let link = document.createElement('a');
     let a = document.createElement('a');
     let imgLink = document.createElement('img');
@@ -88,7 +89,7 @@ const addButtonsToCard = () => {
 flipButton.addEventListener("click", function flip(evt){
     evt.preventDefault();
     if(card.hasChildNodes() === false){
-        console.log('there is nothing to flip')
+        console.log('nope')
     } else {
         card.style.background = 'white';
         card.style.border = 'solid #B76D68 1px';
@@ -139,8 +140,7 @@ nextButton.addEventListener('click', function makeLastButton(evt){
 const lastCard = () => {
     i--;
     if(i === 0){
-        lastButton.setAttribute('id', 'hide-button');
-        i = 0;
+        i = arrOfData.length - 1;
     }
     card.innerHTML = ''
     card.appendChild(h1);
