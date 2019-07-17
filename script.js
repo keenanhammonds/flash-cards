@@ -29,6 +29,7 @@ const card = document.querySelector('.card');
 const start = document.querySelector('.start');
 const lastButton = document.querySelector('.last-button');
 const title = document.querySelector('.title');
+const restartButton = document.querySelector('.restart-button')
 
 let h1 = document.createElement('h1');
 let p = document.createElement('p');
@@ -66,16 +67,11 @@ let i = 0;
 start.addEventListener('click', function evtFunc(evt){
     evt.preventDefault();
     addTopic();
-    this.classList.add('hidden', true)
-    // addRestartButton();
-    // title.
-    // start.removeEventListener('click', evtFunc);
+    this.classList.add('hidden', true);
+    flipButton.removeAttribute('id');
+    nextButton.removeAttribute('id');
+    restartButton.removeAttribute('id');
 })
-
-// const addRestartButton = () => {
-//     title.appendChild('span')
-//     span.classList.add('title-span')
-// }
 
 
 const addTopic = () => {
@@ -118,6 +114,12 @@ nextButton.addEventListener('click', function next (evt){
     nextCard();
 })
 
+nextButton.addEventListener('click', function makeLastButton(evt){
+    evt.preventDefault();
+    // lastButton.classList.remove('hide-button', false);
+    lastButton.removeAttribute('id')
+})
+
 const lastCard = () => {
     i--;
     card.innerHtml = ''
@@ -129,6 +131,14 @@ lastButton.addEventListener('click', function(evt){
     evt.preventDefault();
     lastCard();
 } )
+
+restartButton.addEventListener('click', function restart (){
+    i = 0;
+    card.innerHTML = ''
+    addTopic();
+})
+
+
 
 
 

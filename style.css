@@ -7,7 +7,8 @@ body{
 .title{
     font-family: 'Reem Kufi', sans-serif;
 	font-size: 3.65em;
-	font-weight: 600;
+    font-weight: 600;
+    
 }
 
  header{
@@ -17,23 +18,27 @@ body{
 
 .card{
     margin: auto;
-    border: solid black 2px;
+    /* border: solid black 2px; */
     height: 420px;
     width: 360px;
     text-align: center;
     font-weight: 300;
     display: flex;
     flex-direction: column;
-    align-content: ;
+    /* align-content: ; */
+}
+
+.back-side{
+    background-image: url("back.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
 }
 
 button{
     height: 30px;
 }
 
-/* .like-button{
-    padding-left: 270px;
-} */
 
 
 .buttons{
@@ -46,5 +51,32 @@ button{
 }
 
 .hidden{
+    display: none;
+}
+
+#hide-button{
+    display: none;
+}
+#hide-flip{
+    display: none;
+}
+
+#hide-next{
+    display: none;
+}
+
+.restart-button{
+    align-self: center;
+    height: 50px; 
+    width: 80px;
+    /* right: 200px; */
+}
+
+.title-bar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#hide-restart{
     display: none;
 }

@@ -9,7 +9,11 @@
 </head>
 <body>
     <header class="intro">
-        <h1 class="title">JS Flash Cards</h1>
+        <span class="title-bar">
+            <h3></h3>
+            <h1 class="title">JS Flash Cards</h1>
+            <button class="restart-button" id="hide-restart">Restart</button>
+        </span>
         <div>
             <p class="description">
                 Hit start button to start studying your basic vanilla Javascript! Everyone can always use a refresher. I've also provided links to the <a href="https://www.w3schools.com/">w3School</a> documentation on all concerning topics. The card information is also 
@@ -24,11 +28,11 @@
                         Let's Start!
                     </button>
                 </div>
-        <div class="card"></div>
+        <div class="card back-side"></div>
         <span class="buttons">
-            <button class="last-button">Last Card?</button>
-            <button class="flip-button">Flip Me!</button>
-            <button class="next-button">Next Card?</button>
+            <button class="last-button" id="hide-button">Last Card?</button>
+            <button class="flip-button" id="hide-flip">Flip Me!</button>
+            <button class="next-button" id="hide-next">Next Card?</button>
             <!-- <img class="save-button" src="./save-icon.png" alt="like-button"  class="like-button"> -->
         </span>
     </main>
