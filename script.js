@@ -1,28 +1,5 @@
 console.log('up and running!!')
 
-
-// THE DATA
-// data will be organized into an array of objects
-// each object will have a topic key value pair
-// as well as info or answer key value pair
-// lastly it will have a links portion w links to 
-// w3 schools pages about the topic
-
-// the next card will change the card to the next object in the arr
-
-//The trivia card will start with an image of a topic
-// the trivia card will constantly be switching text content
-// it will default to the topic on the front side
-// after clicking the flip me button...
-// the card will change and will show information about the topic with 
-// a links portion at the bottom
-// next card will go to the next topic
-
-
-// in the future we can sort through differnet data sets to study from
-// ie sorting methods array methods string methods
-// 
-
 const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
@@ -183,31 +160,3 @@ const addLinkToList = () => {
     a.textContent = arrOfData[i].topic;
     savedLinksArr.push(arrOfData[i].topic);
 }
-
-
-
-
-// ADD AN EVENT LISTENER TO START BUTTTON   WHEN CLICKED
-//  IT WILL CLASS LIST TOGGLE TO HIDDEN .HIDDEN IN CSS
-// DISPLAY NONE
-
-
-
-// MAKE A CSS BACKGROUND IMAGE FOR THE CARD ONLY APPEAR FOR THE FRONT
-// WHILE THERES ONLY THE TOPIC
-
-// MAKE A DIFFERENT CSS BACKGROUND FOR WHEN THE THE INFO AND LINKS ARE
-//
-
-// MAKE A START OVER BUTTON ONLY APPEAR WHEN YOU REACH THE END OF THE 
-// CARDS??
-
-// MAKE LETS GET STARTED DISAPEAR WHEN THE GAME IS STARTED???
-
-// MKAE NEXT CARD AND LAST CARD ONLY APPEAR WHEN START BUTTON HAS BEEN 
-// CLICKED 
-
-// card.addEventListener('click', function clickedCard(evt){
-//     evt.preventDefault();
-//     console.log('clicked');
-// })
