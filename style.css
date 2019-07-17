@@ -138,3 +138,7 @@ button:active {
     font-weight: 120; 
 }
 
+.like{
+    justify-content: flex-end;
+}
+

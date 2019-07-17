@@ -13,9 +13,7 @@ let h1 = document.createElement('h1');
 let p = document.createElement('p');
 let link = document.createElement('a');
 
-let arrOfData  = [
-
-]
+let arrOfData  = [];
 
 class Data{
     constructor(topic,info,link){
@@ -72,6 +70,21 @@ const addTopic = () => {
     h1.setAttribute('class', 'topic');
 }
 
+const addButtonsToCard = () => {
+    let link = document.createElement('a');
+    let a = document.createElement('a');
+    let imgLink = document.createElement('img');
+    let img = document.createElement('img');
+    card.appendChild(a);
+    a.appendChild(img);
+    link.appendChild(imgLink);
+    card.appendChild(link);
+    imgLink.setAttribute('src', './thumbs-up.png')
+    link.classList.add('like');
+    a.classList.add('dislike')
+    img.setAttribute('src', './thumbs-down.png')
+}
+
 flipButton.addEventListener("click", function flip(evt){
     evt.preventDefault();
     if(card.hasChildNodes() === false){
@@ -81,6 +94,7 @@ flipButton.addEventListener("click", function flip(evt){
         card.style.border = 'solid #B76D68 1px';
         addInfo();
         addLink();
+        addButtonsToCard();
     }
 })
 
@@ -99,8 +113,10 @@ const addLink = () => {
 
 const nextCard = () => {
     i++;
+    if(i >= arrOfData.length - 1){
+        i = 0;
+    }
     addTopic();
-    console.log(i);
     card.style.background = null;
 }
 
@@ -112,7 +128,6 @@ nextButton.addEventListener('click', function next (evt){
     }
     card.innerHTML = ''
     nextCard();
-    console.log(card.childNodes)
 })
 
 nextButton.addEventListener('click', function makeLastButton(evt){
@@ -132,8 +147,6 @@ const lastCard = () => {
     h1.textContent = arrOfData[i].topic;
     h1.setAttribute('class', 'topic');
     card.style.background = null;
-    console.log(i);
-    console.log(card);
 }
 
 lastButton.addEventListener('click', function(evt){
@@ -163,10 +176,10 @@ const addLinkToList = () => {
     }
     let li = document.createElement('li');
     li.classList.add('list-item');
-    li.setAttribute('target', '_blank');
     let  a = document.createElement('a');
     savedLinks.appendChild(li);
     li.appendChild(a);
+    a.setAttribute("target", "_blank");
     a.setAttribute('href', arrOfData[i].link);
     a.textContent = arrOfData[i].topic;
     savedLinksArr.push(arrOfData[i].topic);
