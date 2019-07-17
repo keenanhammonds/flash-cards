@@ -38,7 +38,18 @@ Because of this, we cannot change constant primitive values, but we can change t
 let classKeyword = new Data('Class', `Use the keyword class to create a class, and always add a constructor method. 
 The constructor method is called each time the class object is initialized.`, `https://www.w3schools.com/js/js_classes.asp`) 
 
-arrOfData.push(scope, hoisting, letKeyword, useStrict,thisKeyword, constKeyword, classKeyword); 
+let pop = new Data('Pop', `The pop() method removes the last element from an array. The pop() method returns the value that was "popped out"`, `https://www.w3schools.com/js/js_array_methods.asp` );
+let push = new Data('Push', `The push() method adds a new element to an array (at the end). The push() method returns the new array length`, `https://www.w3schools.com/js/js_array_methods.asp`);
+let shift = new Data('Shift', `The shift() method returns the string that was "shifted out"`, `https://www.w3schools.com/js/js_array_methods.asp`);
+let unshift = new Data(`Unshift`, `The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements. Unshift returns the array length`, `https://www.w3schools.com/js/js_array_methods.asp`);
+let splice = new Data('Splice', `The splice() method can be used to add new items to an array. The first parameter (2) defines the position where new elements should be added (spliced in).
+The second parameter (0) defines how many elements should be removed. The splice() method returns an array with the deleted items. you can use splice() to remove elements without leaving "holes" in the array The first parameter (0) defines the position where new elements should be added (spliced in). The second parameter (1) defines how many elements should be removed.
+The rest of the parameters are omitted. No new elements will be added.`, `https://www.w3schools.com/js/js_array_methods.asp`);
+let slice = new Data('Slice', `The slice() method slices out a piece of an array into a new array. The slice() method can take two arguments like slice(1, 3). 
+The method then selects elements from the start argument, and up to (but not including) the end argument.`, `https://www.w3schools.com/js/js_array_methods.asp`);
+arrOfData.push(scope, hoisting, letKeyword, useStrict,thisKeyword, constKeyword, classKeyword,
+pop, push, shift, unshift, splice
+); 
 
 let i = 0;
 
