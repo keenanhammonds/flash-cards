@@ -1,24 +1,31 @@
 body{
     text-align: center;
-    font-family: 'Roboto', sans-serif;
-    /* background: yellow; */
+    font-family: 'Raleway', sans-serif;
+    background: white;
+}
+
+a{
+    color: #81B29A;
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
 .title{
     font-family: 'Reem Kufi', sans-serif;
 	font-size: 3.65em;
-    font-weight: 600;
-    
+    font-weight: 400;  
+    font-family: sans-serif;
 }
 
- header{
-   /* background: black;
-   color: white;     */
-} 
+header{
+    background: white;
+}
+
+.start-container{
+    padding-bottom: 12px;
+}
 
 .card{
     margin: auto;
-    /* border: solid black 2px; */
     height: 420px;
     width: 360px;
     text-align: center;
@@ -26,10 +33,9 @@ body{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background-image: url("back.png");
+    background: #B76D68;
     background-repeat: no-repeat;
     background-size: 100% 100%;   
-    /* align-content: ; */
 }
 
 .card-container{
@@ -75,6 +81,8 @@ body{
 .title-bar{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: -10px;
+    border-bottom: solid #B76D68 2px;
 }
 
 .hide-restart{
@@ -83,11 +91,11 @@ body{
 
 
 button{
-    background-color:#44c767;
+    background-color: #121420;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
 	border-radius:28px;
-	border:1px solid #18ab29;
+	border:1px solid #121420;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
@@ -95,11 +103,11 @@ button{
 	font-size:17px;
 	padding:auto;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+	text-shadow:0px 1px 0px #121420;
 }
 
 button:hover {
-	background-color:#5cbf2a;
+	background-color: #121420;
 }
 button:active {
 	position:relative;
@@ -112,3 +120,21 @@ button:active {
     justify-self: end;
     align-self: center;
 }
+
+.list-item{
+    font-family: 'Reem Kufi', sans-serif;
+	font-size: 1.7em;
+    font-weight: 100; 
+}
+
+#brain{
+    align-self: center;
+}
+
+.list-header{
+    border-bottom: solid #121420 1px;
+    font-family: 'Reem Kufi', sans-serif;
+	font-size: 1.7em;
+    font-weight: 120; 
+}
+

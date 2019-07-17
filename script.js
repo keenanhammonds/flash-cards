@@ -90,7 +90,7 @@ flipButton.addEventListener("click", function flip(evt){
         console.log('there is nothing to flip')
     } else {
         card.style.background = 'white';
-        card.style.border = 'solid blue 1px';
+        card.style.border = 'solid #B76D68 1px';
         addInfo();
         addLink();
     }
@@ -99,6 +99,7 @@ flipButton.addEventListener("click", function flip(evt){
 const addInfo = () => {
     card.appendChild(p);
     p.textContent = arrOfData[i].info;
+    
 }
 
 const addLink = () => {
@@ -117,7 +118,7 @@ const nextCard = () => {
 
 nextButton.addEventListener('click', function next (evt){
     evt.preventDefault();
-    if(i >= arrOfData.length){
+    if(i >= arrOfData.length - 1){
         alert(`thats all the cards we have! sorry :(`)
         return;
     }
@@ -134,8 +135,17 @@ nextButton.addEventListener('click', function makeLastButton(evt){
 
 const lastCard = () => {
     i--;
-    card.innerHtml = ''
+    if(i === 0){
+        lastButton.setAttribute('id', 'hide-button');
+        i = 0;
+    }
+    card.innerHTML = ''
+    card.appendChild(h1);
+    h1.textContent = arrOfData[i].topic;
+    h1.setAttribute('class', 'topic');
+    card.style.background = null;
     console.log(i);
+    console.log(card);
 }
 
 lastButton.addEventListener('click', function(evt){
@@ -163,13 +173,15 @@ const addLinkToList = () => {
     if(savedLinksArr.includes(arrOfData[i].topic)){
         return;
     }
-    let li = document.createElement('li')
+    let li = document.createElement('li');
+    li.classList.add('list-item');
+    li.setAttribute('target', '_blank');
     let  a = document.createElement('a');
     savedLinks.appendChild(li);
     li.appendChild(a);
-    a.setAttribute('href', arrOfData[i].link)
-    a.textContent = arrOfData[i].topic
-    savedLinksArr.push(arrOfData[i].topic)
+    a.setAttribute('href', arrOfData[i].link);
+    a.textContent = arrOfData[i].topic;
+    savedLinksArr.push(arrOfData[i].topic);
 }
 
 
