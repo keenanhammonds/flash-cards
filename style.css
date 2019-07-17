@@ -44,3 +44,7 @@ button{
 .description{
     font-size: 1.6em
 }
+
+.hidden{
+    display: none;
+}

@@ -28,6 +28,7 @@ const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
 const start = document.querySelector('.start');
 const lastButton = document.querySelector('.last-button');
+const title = document.querySelector('.title');
 
 let h1 = document.createElement('h1');
 let p = document.createElement('p');
@@ -65,9 +66,16 @@ let i = 0;
 start.addEventListener('click', function evtFunc(evt){
     evt.preventDefault();
     addTopic();
-    start.removeEventListener('click', evtFunc);
+    this.classList.add('hidden', true)
+    // addRestartButton();
+    // title.
+    // start.removeEventListener('click', evtFunc);
 })
 
+// const addRestartButton = () => {
+//     title.appendChild('span')
+//     span.classList.add('title-span')
+// }
 
 
 const addTopic = () => {
@@ -121,6 +129,20 @@ lastButton.addEventListener('click', function(evt){
     evt.preventDefault();
     lastCard();
 } )
+
+
+
+// ADD AN EVENT LISTENER TO START BUTTTON   WHEN CLICKED
+//  IT WILL CLASS LIST TOGGLE TO HIDDEN .HIDDEN IN CSS
+// DISPLAY NONE
+
+
+
+// MAKE A CSS BACKGROUND IMAGE FOR THE CARD ONLY APPEAR FOR THE FRONT
+// WHILE THERES ONLY THE TOPIC
+
+// MAKE A DIFFERENT CSS BACKGROUND FOR WHEN THE THE INFO AND LINKS ARE
+//
 
 // MAKE A START OVER BUTTON ONLY APPEAR WHEN YOU REACH THE END OF THE 
 // CARDS??
