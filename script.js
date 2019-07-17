@@ -29,7 +29,8 @@ const card = document.querySelector('.card');
 const start = document.querySelector('.start');
 const lastButton = document.querySelector('.last-button');
 const title = document.querySelector('.title');
-const restartButton = document.querySelector('.restart-button')
+const restartButton = document.querySelector('.restart-button');
+const saveButton = document.querySelector('.save-button');
 
 let h1 = document.createElement('h1');
 let p = document.createElement('p');
@@ -75,6 +76,9 @@ start.addEventListener('click', function evtFunc(evt){
 
 
 const addTopic = () => {
+    if (card.hasChildNodes()){
+        return;
+    }
     card.appendChild(h1);
     h1.textContent = arrOfData[i].topic;
     h1.setAttribute('class', 'topic');
@@ -85,6 +89,8 @@ flipButton.addEventListener("click", function flip(evt){
     if(card.hasChildNodes() === false){
         console.log('there is nothing to flip')
     } else {
+        card.style.background = 'white';
+        card.style.border = 'solid blue 1px';
         addInfo();
         addLink();
     }
@@ -106,24 +112,29 @@ const nextCard = () => {
     i++;
     addTopic();
     console.log(i);
+    card.style.background = null;
 }
 
 nextButton.addEventListener('click', function next (evt){
     evt.preventDefault();
+    if(i >= arrOfData.length){
+        alert(`thats all the cards we have! sorry :(`)
+        return;
+    }
     card.innerHTML = ''
     nextCard();
+    console.log(card.childNodes)
 })
 
 nextButton.addEventListener('click', function makeLastButton(evt){
     evt.preventDefault();
-    // lastButton.classList.remove('hide-button', false);
+    // lastButton.classList.toggle('hide-button', true);
     lastButton.removeAttribute('id')
 })
 
 const lastCard = () => {
     i--;
     card.innerHtml = ''
-    addTopic();
     console.log(i);
 }
 
@@ -135,9 +146,31 @@ lastButton.addEventListener('click', function(evt){
 restartButton.addEventListener('click', function restart (){
     i = 0;
     card.innerHTML = ''
-    addTopic();
+    addTopic(); 
+    card.style.background = null;
 })
 
+saveButton.addEventListener('click', function(evt){
+    evt.preventDefault();
+    addLinkToList();
+})
+
+const savedLinks = document.querySelector('.saved-links');
+
+const savedLinksArr = [];
+
+const addLinkToList = () => {
+    if(savedLinksArr.includes(arrOfData[i].topic)){
+        return;
+    }
+    let li = document.createElement('li')
+    let  a = document.createElement('a');
+    savedLinks.appendChild(li);
+    li.appendChild(a);
+    a.setAttribute('href', arrOfData[i].link)
+    a.textContent = arrOfData[i].topic
+    savedLinksArr.push(arrOfData[i].topic)
+}
 
 
 

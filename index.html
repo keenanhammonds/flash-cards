@@ -12,23 +12,29 @@
         <span class="title-bar">
             <h3></h3>
             <h1 class="title">JS Flash Cards</h1>
-            <button class="restart-button" id="hide-restart">Restart</button>
+            <button class="restart-button" class="hide-restart">Restart</button>
         </span>
         <div>
             <p class="description">
-                Hit start button to start studying your basic vanilla Javascript! Everyone can always use a refresher. I've also provided links to the <a href="https://www.w3schools.com/">w3School</a> documentation on all concerning topics. The card information is also 
+                Hit the start button to start studying your basic vanilla Javascript! Everyone can always use a refresher. I've also provided links to the <a href="https://www.w3schools.com/">w3School</a> documentation on all concerning topics. The card information is also 
                 pulled from a static database of <a href="https://www.w3schools.com/">w3School</a> content. I've always been very appreciative of their service to the developer commnunity. <br>
                 Have Fun =)
             </p>
         </div>
     </header>
     <main>
-            <div>
-                    <button class="start">
-                        Let's Start!
-                    </button>
-                </div>
-        <div class="card back-side"></div>
+        <div>
+            <button class="start">Let's Start!</button>
+        </div>  
+        <div class="card-container">
+            <button class="save-button">Save this link?</button>
+            <span class="card"></span>
+            <span class="list-container">
+                <ul class="saved-links"></ul>
+            </span>
+
+        </div>  
+
         <span class="buttons">
             <button class="last-button" id="hide-button">Last Card?</button>
             <button class="flip-button" id="hide-flip">Flip Me!</button>
