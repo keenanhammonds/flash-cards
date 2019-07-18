@@ -184,12 +184,3 @@ const addLinkToList = () => {
     a.textContent = arrOfData[i].topic;
     savedLinksArr.push(arrOfData[i].topic);
 }
-
-
-
-// firebase 
-
-var ref = firebase.database().ref();                           
-ref.on("value", function(snapshot){
-    output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
-});
