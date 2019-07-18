@@ -129,6 +129,7 @@ button:active {
     width: 180px;
     justify-self: end;
     align-self: center;
+    margin-right: 80px; 
 }
 
 .list-item{
@@ -142,7 +143,7 @@ button:active {
 }
 
 .list-header{
-    border-bottom: solid #121420 1px;
+    border-bottom: solid #121420 5px;
     font-family: 'Reem Kufi', sans-serif;
 	font-size: 2em;
     font-weight: 120; 
@@ -152,4 +153,42 @@ button:active {
     justify-content: flex-end;
 }
 
+.list-header{
+    /* padding-left: 500px; */
+}
+
+.list-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 90px;
+    
+}
+.js-image-container{
+    display: flex;
+    position: absolute;
+    justify-content: flex-start;
+}
+.js-img{
+    /* align-self: flex-start; */
+}
+
+.saved-list{
+    position: absolute;
+}
+
+
+.game-container{
+    margin-top:80px;
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-top: solid #B76D68 2px;
+}
+
+.flash-card-game{
+    align-self: center;
+    height: 620px;
+
+}
 

@@ -73,7 +73,7 @@ const addTopic = () => {
 const addButtonsToCard = () => {
       
     let link = document.createElement('a');
-    let a = document.createElement('a');
+
     let imgLink = document.createElement('img');
     let img = document.createElement('img');
     card.appendChild(a);
@@ -184,3 +184,12 @@ const addLinkToList = () => {
     a.textContent = arrOfData[i].topic;
     savedLinksArr.push(arrOfData[i].topic);
 }
+
+
+
+// firebase 
+
+var ref = firebase.database().ref();                           
+ref.on("value", function(snapshot){
+    output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
+});

@@ -36,12 +36,24 @@
         </div>  
         <div class="game-container">
             <div class=".flash-card-game">
+                <div class="js-img-container">
+                    <div>
+                        <img class="js-img" src="javascript.png" alt="javascript image">
+                    </div>
+                </div>
+                <div class="list-container">
+                    <div></div>
+                    <div></div>
+                    <div>
+                        <div class="list-header">A list of your links!</div>
+                    </div>
+                    
+                </div>
                 <div class="card-container">
                     <button class="save-button">Save this link</button>
                     <span class="card"></span>
-                    <span class="list-container">
-                        <div class="list-header">A list of your links!</div>
-                        <ul class="saved-links"></ul>
+                    <span>
+                    <ul class="saved-links"></ul>
                     </span>
                 </div>  
                 <span class="buttons">
@@ -50,8 +62,27 @@
                     <button class="next-button" id="hide-next">Next Card?</button>
                 </span>
             </div>
-        </div>
     </main>
     <script src="./script.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB6G0-lEfN2nlAyIT0STQMLKZifm6lzVks",
+    authDomain: "flash-cards-73813.firebaseapp.com",
+    databaseURL: "https://flash-cards-73813.firebaseio.com",
+    projectId: "flash-cards-73813",
+    storageBucket: "",
+    messagingSenderId: "226028833708",
+    appId: "1:226028833708:web:54a448a642376778"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
 </body>
 </html>
