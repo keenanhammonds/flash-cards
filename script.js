@@ -179,67 +179,82 @@ restartButton.addEventListener('click', function restart (){
     card.style.background = null;
 })
 
-saveButton.addEventListener('click', function(evt){
-    evt.preventDefault();
-    addLinkToList();
-    sendData();
-    ref.on('value', gotData, errData)
-    
-})
+
+const savedLinks = document.querySelector('.saved-links');
+
+const savedLinksArr = [];
 
 
 
-
+// ADDING AND REMOVING DATA FROM DATABASE
 
 
 let ref = database.ref('Links');
 
 
-function gotData(data) {
-    console.log(data.val())
-    let links = data.val();
-    let keys = Object.keys(links)
-    console.log(keys)
-    for(let i = 0; i < keys.length; i++){
-        let k = keys[i];
-        let topic = links[k].topic;
-        let link = links[k].link;
-        console.log(topic, link);
-    }
-}
 
-function errData(err){
-    console.log('error')
-}
+// saveButton.addEventListener('click', function(evt){
+//     evt.preventDefault();
+//     ref.on('value', gotData, errData )
 
-// function errData(err) {
-//     console.log(err)
-//     console.log('error!!')
-// }
-
-
-
+//     gotData();
+    
+// })
 
 const sendData = () => {
     ref.push(arrOfData[i]);
     console.log(`the object should be in the database`);
 }
 
-const savedLinks = document.querySelector('.saved-links');
+    // function gotData(data) {
+        // let links = data.val();
+        // let keys = Object.keys(links)
+        
+        // for(let i = 0; i < keys.length; i++){
+            // let k = keys[i];
+            // let topic = links[k].topic;
+            // let link = links[k].link;
 
-const savedLinksArr = [];
+    //         let li = document.createElement('li');
+    //         li.classList.add('list-item');
+    //         let  a = document.createElement('a');
+    //         savedLinks.appendChild(li);
+    //         li.appendChild(a);
+    //         a.setAttribute("target", "_blank");
+    //         a.setAttribute('href', arrOfData[i].link);
+    //         a.textContent = arrOfData[i].topic;
+    //     // }
+    // }
 
-const addLinkToList = () => {
-    if(savedLinksArr.includes(arrOfData[i].topic)){
-        return;
+    saveButton.addEventListener('click', function(evt){
+        evt.preventDefault();
+        addLinkToList();
+        sendData();
+    })
+    
+    //  const savedLinks = document.querySelector('.saved-links');
+    
+    //  const savedLinksArr = [];
+    
+     const addLinkToList = () => {
+        if(savedLinksArr.includes(arrOfData[i].topic)){
+            return;
+        }
+        let li = document.createElement('li')
+        let  a = document.createElement('a');
+        savedLinks.appendChild(li);
+        li.appendChild(a);
+        a.setAttribute('href', arrOfData[i].link)
+        a.textContent = arrOfData[i].topic
+        savedLinksArr.push(arrOfData[i].topic)
     }
-    let li = document.createElement('li');
-    li.classList.add('list-item');
-    let  a = document.createElement('a');
-    savedLinks.appendChild(li);
-    li.appendChild(a);
-    a.setAttribute("target", "_blank");
-    a.setAttribute('href', arrOfData[i].link);
-    a.textContent = arrOfData[i].topic;
-    savedLinksArr.push(arrOfData[i].topic);
-}
+    
+    
+
+    function errData(err){
+        console.log('error')
+        console.log(err)
+    }
+
+
+
