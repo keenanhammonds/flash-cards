@@ -1,5 +1,21 @@
 console.log('up and running!!')
 
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDUuzRSnez9-Y3KXoXIwl7GThZlSjtnbMY",
+    authDomain: "flash-cards-c25ef.firebaseapp.com",
+    databaseURL: "https://flash-cards-c25ef.firebaseio.com",
+    projectId: "flash-cards-c25ef",
+    storageBucket: "",
+    messagingSenderId: "878574815619",
+    appId: "1:878574815619:web:4cdb910eea0ce153"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  let database = firebase.database();
+  console.log(database);    
+
+
 const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
