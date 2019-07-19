@@ -16,6 +16,8 @@ console.log('up and running!!')
   console.log(database);    
 
 
+
+
 const flipButton = document.querySelector('.flip-button');
 const nextButton = document.querySelector('.next-button');
 const card = document.querySelector('.card');
@@ -180,7 +182,14 @@ restartButton.addEventListener('click', function restart (){
 saveButton.addEventListener('click', function(evt){
     evt.preventDefault();
     addLinkToList();
+    sendData();
 })
+
+const sendData = () => {
+    let ref = database.ref('Links');
+    ref.push(arrOfData[i])
+    console.log(`the object should be in the database`)
+}
 
 const savedLinks = document.querySelector('.saved-links');
 
