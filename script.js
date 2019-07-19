@@ -91,7 +91,7 @@ const addTopic = () => {
 const addButtonsToCard = () => {
       
     let link = document.createElement('a');
-
+    let a = document.createElement('a');
     let imgLink = document.createElement('img');
     let img = document.createElement('img');
     card.appendChild(a);
@@ -165,7 +165,7 @@ const lastCard = () => {
     h1.textContent = arrOfData[i].topic;
     h1.setAttribute('class', 'topic');
     card.style.background = null;
-}
+}   
 
 lastButton.addEventListener('click', function(evt){
     evt.preventDefault();
@@ -183,12 +183,46 @@ saveButton.addEventListener('click', function(evt){
     evt.preventDefault();
     addLinkToList();
     sendData();
+    ref.on('value', gotData, errData)
+    
 })
 
+
+
+
+
+
+let ref = database.ref('Links');
+
+
+function gotData(data) {
+    console.log(data.val())
+    let links = data.val();
+    let keys = Object.keys(links)
+    console.log(keys)
+    for(let i = 0; i < keys.length; i++){
+        let k = keys[i];
+        let topic = links[k].topic;
+        let link = links[k].link;
+        console.log(topic, link);
+    }
+}
+
+function errData(err){
+    console.log('error')
+}
+
+// function errData(err) {
+//     console.log(err)
+//     console.log('error!!')
+// }
+
+
+
+
 const sendData = () => {
-    let ref = database.ref('Links');
-    ref.push(arrOfData[i])
-    console.log(`the object should be in the database`)
+    ref.push(arrOfData[i]);
+    console.log(`the object should be in the database`);
 }
 
 const savedLinks = document.querySelector('.saved-links');
